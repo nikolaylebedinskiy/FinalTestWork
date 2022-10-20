@@ -9,3 +9,40 @@
 // [“Russia”, “Denmark”, “Kazan”] → []
 
 
+string[] array1 = {"Hello" , "00002" , "world" , "0000:-)"};
+string[] array2 = new string[array1.Length];
+
+void ShortArray(string[] array1, string[] array2)
+{
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+        if (array1[i].Length <= 3)
+        {
+            array2[count] = array1[i];
+            count++;
+        }
+    }
+}
+
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.WriteLine(array[i]);
+    }
+    System.Console.WriteLine();
+}
+
+ShortArray(array1, array2);
+System.Console.WriteLine($"Исходный массив: ");
+PrintArray(array1);
+if (array2.Length == 0)
+{
+    System.Console.WriteLine("В массиве нет элементов короче 3 символов");
+}
+else
+{
+System.Console.WriteLine("Массив с элементами не более 3 символов");
+PrintArray(array2);
+}
